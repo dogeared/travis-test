@@ -7,7 +7,6 @@ jdk:
 - oraclejdk8
 before_install:
 - export RUN_ITS="$([ $TRAVIS_JDK_VERSION == 'openjdk6' ] && echo 'true')"
-- mkdir ~/.ssh
 - openssl aes-256-cbc -K $encrypted_80e806a70d33_key -iv $encrypted_80e806a70d33_iv
   -in id_rsa_sp_heroku.enc -out ~/.ssh/id_rsa -d
 script:
