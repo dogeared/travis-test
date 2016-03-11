@@ -5,5 +5,9 @@ jdk:
 - openjdk7
 - oraclejdk7
 - oraclejdk8
+before_install:
+- export RUN_ITS="$([ $TRAVIS_JDK_VERSION == 'openjdk6' ] && echo 'true')"
 script:
 - mvn install
+after_success:
+- test -z "$RUN_ITS" || ./publish_tests.sh
