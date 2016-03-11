@@ -1,6 +1,8 @@
 #! /bin/bash
 
 echo "Cloning Heroku repo"
+git config --global user.email "evangelists@stormpath.com"
+git config --global user.name "stormpath-sdk-java Auto Doc Build"
 git clone https://git.heroku.com/whispering-cliffs-74141.git
 
 echo "Updating Heroku app"

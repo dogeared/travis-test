@@ -10,6 +10,6 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_80e806a70d33_key -iv $encrypted_80e806a70d33_iv 
   -in .netrc.enc -out ~/.netrc -d
 script:
-- mvn install
+- mvn -q install
 after_success:
 - test -z "$RUN_ITS" || ./publish_tests.sh
